@@ -171,4 +171,4 @@ cython_debug/
 .pypirc
 
 # IA Files
-IA/
+cars/IA/
