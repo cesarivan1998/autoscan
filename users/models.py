@@ -20,7 +20,11 @@ class CustomUser(AbstractBaseUser):
     email = models.EmailField(unique=True)
     full_name = models.CharField(max_length=100, blank=True, null=True)
     dni = models.CharField(max_length=9, blank=True, null=True)
-
+    phone_number = models.CharField(max_length=9, blank=True, null=True)
+    birth_date = models.DateField(blank=True, null=True)
+    address = models.CharField(max_length=255, blank=True, null=True)
+    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
+    
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['full_name']
 
@@ -33,10 +37,6 @@ class Wishlist(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    phone_number = models.CharField(max_length=9, blank=True, null=True)
-    birth_date = models.DateField(blank=True, null=True)
-    address = models.CharField(max_length=255, blank=True, null=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     def __str__(self):
         return {self.user.full_name}
 

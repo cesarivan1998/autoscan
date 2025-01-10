@@ -3,8 +3,8 @@ from .models import Car, Brand
 
 # Register your models here.
 class BrandAdmin(admin.ModelAdmin):
-    list_display = ('name','model')
-    list_filter = ('model',)
+    list_display = ('name','logo')
+    list_filter = ('name',)
 
 admin.site.register(Brand, BrandAdmin)
 
