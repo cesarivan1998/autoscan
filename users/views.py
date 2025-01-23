@@ -59,16 +59,6 @@ class ProfileUpdateView(generic.UpdateView):
     template_name = 'profile_update.html'
     success_url = reverse_lazy('landing_page')
 
-class ProfileWorkerView(generic.DetailView):
-    model = CustomUser
-    template_name = 'profile_worker.html'
-
-class ProfileWorkerUpdateView(generic.UpdateView):
-    model = CustomUser
-    form_class = CustomUserChangeForm
-    template_name = 'profile_worker_update.html'
-    success_url = reverse_lazy('lab')
-
 
 def login_view(request):
     if request.method == "POST":

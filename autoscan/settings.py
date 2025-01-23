@@ -160,3 +160,9 @@ EMAIL_SUBJECT_PREFIX="Recuperar contraseña"
 LOGIN_REDIRECT_URL = 'landing_page'  # Página a la que se redirige después de loguearse
 LOGOUT_REDIRECT_URL = 'landing_page'  # Página a la que se redirige después de cerrar sesión
 LOGIN_URL = '/login/'
+
+
+# cors authorization
+CORS_ALLOWED_ORIGINS = ["http://localhost:5173"]
+
+REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'}

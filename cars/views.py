@@ -1,5 +1,14 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from rest_framework import viewsets
+from .serializer import CarSerializer,BrandSerializer
+from .models import Car,Brand
 
-
-def index(request):
-    return HttpResponse("Hello, world. You're at the cars index.")
+#vista basica para las tareas
+# Create your views here.
+class CarsView(viewsets.ModelViewSet):
+    serializer_class = CarSerializer
+    queryset = Car.objects.all()
+    
+class BrandsView(viewsets.ModelViewSet):
+    serializer_class = BrandSerializer
+    queryset = Brand.objects.all()
